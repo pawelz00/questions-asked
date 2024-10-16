@@ -4,36 +4,39 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView>
-        <ThemedText>
-          Testowa aplikacja mobilna zbudowana w React Native z użyciem Expo.
+    >
+      <ThemedView style={styles.flexContainer}>
+        <ThemedText type='title'>
+          Pytania miłosne dla par!
+        </ThemedText>
+        <Ionicons name='heart-sharp' size={32} style={{ color: 'red' }} />
+      </ThemedView>
+      <ThemedView style={styles.flexContainer}>
+        <ThemedText type='default'>
+          Zadaj 100 pytań swojej drugiej połówce i poznaj ją jeszcze lepiej!
         </ThemedText>
       </ThemedView>
-
-    </ParallaxScrollView>
+      <ThemedView style={styles.flexContainer}>
+        <ThemedText>
+          Przejdź do zakładki "Pytania" i wybierz pytania, które chcesz zadać swojej drugiej połówce.
+        </ThemedText>
+      </ThemedView>
+    </ParallaxScrollView >
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  flexContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+    alignContent: 'center',
+    justifyContent: 'center',
+    gap: 6,
   },
   reactLogo: {
     height: 178,

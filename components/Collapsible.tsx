@@ -7,14 +7,14 @@ import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const theme = useColorScheme() ?? 'light';
 
   return (
-    <ThemedView>
+    <ThemedView style={styles.themedViewContainer}>
       <TouchableOpacity
-        style={styles.heading}
-        onPress={() => setIsOpen((value) => !value)}
+        style={{ ...styles.heading }}
+        onPress={() => setIsOpen((prev: boolean) => !prev)}
         activeOpacity={0.8}>
         <Ionicons
           name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
@@ -29,13 +29,21 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
 }
 
 const styles = StyleSheet.create({
+  themedViewContainer: {
+    width: '100%',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 10,
+  },
   heading: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
   },
   content: {
-    marginTop: 6,
+    marginVertical: 6,
     marginLeft: 24,
   },
 });

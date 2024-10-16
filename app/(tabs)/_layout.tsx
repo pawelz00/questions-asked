@@ -18,7 +18,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
@@ -27,7 +27,7 @@ export default function TabLayout() {
         name="questions"
         options={{
           title: 'Pytania',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
             <TabBarIcon name={focused ? 'heart-circle' : 'heart-circle-outline'} color={color} />
           ),
         }}

@@ -10,10 +10,36 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const theme = useColorScheme() ?? 'light';
 
+  function getTouchableStyles() {
+    const style = StyleSheet.create({
+      basic: {
+        width: '100%',
+        borderStyle: 'solid',
+        borderWidth: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 8,
+        borderRadius: 10,
+        borderColor: theme === 'light' ? Colors.light.border : Colors.dark.border,
+      }
+    })
+
+
+    if (isOpen) {
+      style.basic = {
+        ...style.basic,
+        borderColor: theme === 'light' ? Colors.light.borderPressed : Colors.dark.borderPressed,
+        // @ts-ignore
+        borderStyle: 'dashed',
+      }
+    }
+
+    return style.basic
+  }
+
   return (
-    <ThemedView style={styles.themedViewContainer}>
+    <ThemedView style={getTouchableStyles()}>
       <TouchableOpacity
-        style={{ ...styles.heading }}
+        style={styles.heading}
         onPress={() => setIsOpen((prev: boolean) => !prev)}
         activeOpacity={0.8}>
         <Ionicons
@@ -21,7 +47,7 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
           size={18}
           color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
         />
-        <ThemedText type="defaultSemiBold">{title}</ThemedText>
+        <ThemedText type="defaultSemiBold" style={{ fontSize: 18 }}>{title}</ThemedText>
       </TouchableOpacity>
       {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
     </ThemedView>
@@ -29,12 +55,12 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
 }
 
 const styles = StyleSheet.create({
-  themedViewContainer: {
+  basic: {
     width: '100%',
     borderStyle: 'solid',
     borderWidth: 2,
     paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingVertical: 8,
     borderRadius: 10,
   },
   heading: {

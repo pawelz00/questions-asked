@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignContent: 'center',
         justifyContent: 'center',
-        gap: 6,
+        gap: 10,
     },
 });

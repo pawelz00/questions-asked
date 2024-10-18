@@ -4,12 +4,14 @@ export const Colors = {
     text: '#11181C',
     background: '#fff',
     headerStyle: '#f4511e',
-    headerText: '#123'
+    headerText: '#123',
+    tabIcon: '#123',
   },
   dark: {
     text: '#ECEDEE',
     background: '#151718',
     headerStyle: '#fb112f',
-    headerText: '#fef'
+    headerText: '#fef',
+    tabIcon: '#fef',
   },
 };

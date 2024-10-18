@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 
-export default function SettingsScreen() {
+export default function Index() {
     return (
         <View>
-            <Text>Settings</Text>
+            <Text>Main index screen</Text>
         </View>
     );
 }

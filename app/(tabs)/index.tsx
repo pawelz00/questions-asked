@@ -20,18 +20,25 @@ export default function Index() {
                     Pytania miłosne dla par!
                 </ThemedText>
             </ThemedView>
+            <ThemedView darkColor={DarkTheme.colors.background} style={styles.mainContainer}>
+                <ThemedText>
+                    • Wybierz jedną z 4 kategorii.
+                </ThemedText>
+                <ThemedText>
+                    • Zadaj pytanie swojej drugiej połówce, aby lepiej się poznać!
+                </ThemedText>
+                <ThemedText>
+                    • Odpowiadaj szczerze na pytania, które dostaniesz.
+                </ThemedText>
+                <ThemedText>
+                    • A może chcesz zadać pytanie samemu sobie?
+                </ThemedText>
+            </ThemedView>
             <ThemedView darkColor={DarkTheme.colors.background}>
-                <ThemedText type='subtitle'>
-                    Wybierz jedną z 4 kategorii. Czekają na Was pytania odnośnie miłości, związku, przyszłości i wiele innych!
-                </ThemedText>
-                <ThemedText>
-                    Zadawaj pytania swojej drugiej połówce, aby lepiej się poznać!
-                </ThemedText>
-                <ThemedText>
-                    A może chcesz zadać pytanie samemu sobie?
-                </ThemedText>
-                <ThemedText>
-                    Wszystko jest możliwe!
+                <ThemedText type='subtitle' style={{
+                    color: DarkTheme.colors.text,
+                }}>
+                    Powodzenia! ❤️‍🔥
                 </ThemedText>
             </ThemedView>
         </SafeAreaView>
@@ -52,5 +59,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 12,
         paddingVertical: 6,
+    },
+    mainContainer: {
+        gap: 6,
     }
 })

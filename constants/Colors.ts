@@ -9,7 +9,7 @@ export const Colors = {
   },
   dark: {
     text: '#ECEDEE',
-    background: '#151718',
+    background: '#2c2c2c',
     headerStyle: '#fb112f',
     headerText: '#fef',
     tabIcon: '#fef',

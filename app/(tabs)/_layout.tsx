@@ -4,6 +4,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { useColorScheme } from 'react-native';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import DarkTheme from '@/config/DarkTheme';
 
 export default function TabLayout() {
 
@@ -21,7 +22,7 @@ export default function TabLayout() {
                     <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
                 ),
                 tabBarStyle: {
-                    backgroundColor: theme === 'dark' ? Colors.dark.headerStyle : Colors.light.headerStyle,
+                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
                 },
                 title: "Instrukcja",
             }} />
@@ -30,7 +31,7 @@ export default function TabLayout() {
                     <TabBarIcon name={focused ? 'heart' : 'heart-outline'} color={color} />
                 ),
                 tabBarStyle: {
-                    backgroundColor: theme === 'dark' ? Colors.dark.headerStyle : Colors.light.headerStyle,
+                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
                 },
                 title: "Pytania",
             }} />

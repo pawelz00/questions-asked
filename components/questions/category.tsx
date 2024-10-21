@@ -2,17 +2,18 @@ import { StyleSheet, useColorScheme } from "react-native";
 import { ThemedView } from "../themed-view";
 import { ThemedText } from "../themed-text";
 import DarkTheme from "@/config/DarkTheme";
-
-type CategoryProps = {
-    title: string;
-    color?: string;
-}
+import { CategoryProps } from "@/constants/Questions";
 
 export default function Category({ title, color }: CategoryProps) {
 
     return (
-        <ThemedView darkColor={DarkTheme.colors.background} style={styles.view}>
-            <ThemedText style={styles.text}>
+        <ThemedView darkColor={DarkTheme.colors.background} style={{
+            ...styles.view,
+            backgroundColor: color ?? DarkTheme.colors.card,
+        }}>
+            <ThemedText style={{
+                ...styles.text,
+            }}>
                 {title}
             </ThemedText>
         </ThemedView>

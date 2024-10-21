@@ -13,7 +13,7 @@ export default function TabLayout() {
     return (
         <Tabs
             screenOptions={{
-                headerShown: false,
+                headerShown: true,
                 tabBarActiveTintColor: Colors[theme ?? 'light'].headerText,
             }}
         >
@@ -24,6 +24,7 @@ export default function TabLayout() {
                 tabBarStyle: {
                     backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
                 },
+                headerTitle: "Jak korzystać?",
                 title: "Instrukcja",
             }} />
             <Tabs.Screen name="(questions)" options={{

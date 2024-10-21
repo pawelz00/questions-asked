@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
-import { Collapsible } from "@/components/Collapsible";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import { Collapsible } from "@/components/collapsible";
+import ParallaxScrollView from "@/components/parallax-scroll-view";
+import { ThemedText } from "@/components/themed-text";
+import { ThemedView } from "@/components/themed-view";
 import { relationshipQuestions } from "@/constants/Questions";
 
 export default function Questions() {

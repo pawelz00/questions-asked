@@ -39,5 +39,17 @@ export const questions: Question[] = [
     {
         question: "Jakie emocje towarzyszą Ci w naszym związku?",
         category: "Emocje",
-    }
+    },
+    {
+        question: "test",
+        category: "Emocje",
+    },
+    {
+        question: "Jak dbasz o swoje zdrowie?",
+        category: "Zdrowie",
+    },
+    {
+        question: "Jakie masz fantazje erotyczne?",
+        category: "Erotyczne",
+    },
 ]

@@ -4,6 +4,7 @@ import { categories, questions } from "@/constants/Questions";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import DarkTheme from "@/config/DarkTheme";
+import { Link } from "expo-router";
 
 export default function Index() {
 
@@ -15,9 +16,16 @@ export default function Index() {
       <ThemedText style={{ fontSize: 18, fontWeight: 'semibold' }}>
         W bazie posiadamy {questionsLength} {questionsLength === 1 ? 'pytanie' : questionsLength < 5 ? 'pytania' : 'pytań'}!
       </ThemedText>
-      <ThemedView darkColor={DarkTheme.colors.background} style={styles.categoryContainer}>
+      <ThemedView style={styles.categoryContainer}>
         {categories.map((category, index) => (
-          <Category title={category.title} color={category.color} key={category.title + index} />
+          <ThemedView style={{ backgroundColor: 'transparent' }}>
+            <Link href={{
+              pathname: '/(tabs)/(questions)/single/[category]',
+              params: { category: category.title }
+            }}>
+              <Category title={category.title} color={category.color} key={category.title + index} />
+            </Link>
+          </ThemedView>
         ))}
       </ThemedView>
     </View>
@@ -26,6 +34,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   categoryContainer: {
+    backgroundColor: 'transparent', 
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,

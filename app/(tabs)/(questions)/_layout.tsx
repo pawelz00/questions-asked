@@ -1,3 +1,4 @@
+import DarkTheme from '@/config/DarkTheme';
 import { Stack } from 'expo-router';
 
 export default function HomeLayout() {
@@ -5,7 +6,7 @@ export default function HomeLayout() {
         <Stack
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: '#f4511e',
+                    backgroundColor: DarkTheme.colors.border,
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {

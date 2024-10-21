@@ -2,7 +2,7 @@
 
 const categoriesTitles = ["Przyszłość", "Erotyczne", "Emocje", "Zdrowie"] as const;
 
-export interface QuestionProps {
+export interface Question {
     question: string;
     category: typeof categoriesTitles[number];
 }
@@ -31,7 +31,7 @@ export const categories: CategoryProps[] = [
     },
 ]
 
-export const questions: QuestionProps[] = [
+export const questions: Question[] = [
     {
         question: "Jak widzisz nasz związek za 5 lat?",
         category: "Przyszłość",

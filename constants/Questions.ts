@@ -30,3 +30,14 @@ export const categories: CategoryProps[] = [
         color: '#567567',
     },
 ]
+
+export const questions: QuestionProps[] = [
+    {
+        question: "Jak widzisz nasz związek za 5 lat?",
+        category: "Przyszłość",
+    },
+    {
+        question: "Jakie emocje towarzyszą Ci w naszym związku?",
+        category: "Emocje",
+    }
+]

@@ -3,7 +3,7 @@ import { Colors } from '@/constants/Colors';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { useColorScheme } from 'react-native';
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { TabBarIcon } from '@/components/navigation/tab-bar-icon';
 import DarkTheme from '@/config/DarkTheme';
 
 export default function TabLayout() {

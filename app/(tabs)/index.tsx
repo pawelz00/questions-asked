@@ -1,7 +1,5 @@
 import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
 import DarkTheme from "@/config/DarkTheme";
-import { Link, useNavigation } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from 'expo-router';
@@ -11,12 +9,10 @@ export default function Index() {
     return (
         <SafeAreaView style={styles.viewContainer}>
             <ThemedText style={styles.title}>Witaj w QuestionsAsked!</ThemedText>
-
             <ThemedText style={styles.subtitle}>
                 👋 Znajdziesz tutaj ciekawe pytania, które pomogą wzmocnić Twoją relację.
                 Sprawdź, ile wiecie o sobie nawzajem i zobaczcie, jak możecie się lepiej zrozumieć!
             </ThemedText>
-
             <ThemedText style={styles.introduction}>
                 🚀 Przed wami wyjątkowa przygoda!
                 Nasza aplikacja dostarcza wiele pytań na różne tematy – od zabawnych po poważne.

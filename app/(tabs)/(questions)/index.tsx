@@ -18,9 +18,8 @@ export default function Index() {
       </ThemedText>
       <ThemedView style={styles.categoryContainer}>
         {categories.map((category, index) => (
-          <ThemedView style={{ backgroundColor: 'transparent' }}>
+          <ThemedView key={category.title + index} style={{ backgroundColor: 'transparent' }}>
             <Link
-              key={category.title + index}
               href={{
                 pathname: '/(tabs)/(questions)/single/[category]',
                 params: { category: category.title }

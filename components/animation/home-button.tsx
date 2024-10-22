@@ -1,9 +1,11 @@
 import DarkTheme from "@/config/DarkTheme"
+import DefaultTheme from "@/config/DefaultTheme"
 import { router } from "expo-router"
 import { forwardRef, LegacyRef } from "react"
 import { TouchableOpacity, StyleSheet, Text } from "react-native"
 import { Gesture, GestureDetector, TouchableOpacityProps } from "react-native-gesture-handler"
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated"
+import { ThemedText } from "../themed-text"
 
 const HomeButton = forwardRef((props: TouchableOpacityProps, ref: LegacyRef<TouchableOpacity>) => {
     return (
@@ -12,7 +14,7 @@ const HomeButton = forwardRef((props: TouchableOpacityProps, ref: LegacyRef<Touc
             ref={ref}
             onPress={() => router.push('/(tabs)/(questions)')}
         >
-            <Text style={styles.buttonText}>Przejdź do pytań  ➡️</Text>
+            <ThemedText style={styles.buttonText}>Przejdź do pytań  ➡️</ThemedText>
         </TouchableOpacity>
     )
 })
@@ -35,13 +37,12 @@ export default function HomeButtonAnimated() {
         });
 
     return <GestureDetector gesture={tap}>
-        <AnimatedHomeButton style={[styles.button, animatedStyles]} />
+        <AnimatedHomeButton style={[styles.button, { backgroundColor: DefaultTheme.colors.primary }, animatedStyles]} />
     </GestureDetector>
 }
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: DarkTheme.colors.primary,
         padding: 15,
         borderRadius: 30,
         alignItems: 'center',
@@ -50,6 +51,5 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: DarkTheme.colors.text,
     },
 })

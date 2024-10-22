@@ -1,5 +1,4 @@
 import { ThemedText } from "@/components/themed-text";
-import DarkTheme from "@/config/DarkTheme";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HomeButtonAnimated from "@/components/animation/home-button";
@@ -52,17 +51,5 @@ const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center',
         marginBottom: 40,
-    },
-    button: {
-        backgroundColor: DarkTheme.colors.primary,
-        padding: 15,
-        borderRadius: 30,
-        alignItems: 'center',
-        width: '80%',
-    },
-    buttonText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: DarkTheme.colors.text,
     },
 })

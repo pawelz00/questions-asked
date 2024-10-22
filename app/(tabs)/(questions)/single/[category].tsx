@@ -1,13 +1,15 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Stack, Tabs, useLocalSearchParams } from 'expo-router';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, useColorScheme } from 'react-native';
 import { categories, Question, questions } from '@/constants/Questions';
 import DarkTheme from '@/config/DarkTheme';
 import { useEffect, useState } from 'react';
 import Button from '@/components/pressable';
+import DefaultTheme from '@/config/DefaultTheme';
 
 export default function DetailsScreen() {
+    const theme = useColorScheme();
     const { category } = useLocalSearchParams();
     const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
     const questionsArray = questions.filter((question) => question.category === category);
@@ -24,6 +26,15 @@ export default function DetailsScreen() {
         return questionsArray?.indexOf(currentQuestion ?? questionsArray?.[0]) === questionsArray.length - 1;
     }
 
+    function getBgColorForStack() {
+        const categoryFind = categories.find((cat) => cat.title === category)
+        if (theme === 'dark') {
+            return categoryFind?.color
+        } else {
+            return categoryFind?.lightColor
+        }
+    }
+
     const currentQuestionIndex = questionsArray.indexOf(currentQuestion ?? questionsArray[0]);
 
     return (
@@ -34,12 +45,15 @@ export default function DetailsScreen() {
                     headerBackVisible: true,
                     headerBackTitleVisible: false,
                     headerStyle: {
-                        backgroundColor: categories.find((cat) => cat.title === category)?.color,
+                        backgroundColor: getBgColorForStack(),
                     },
-                    headerTintColor: DarkTheme.colors.text,
+                    headerTintColor: theme === 'dark' ? DarkTheme.colors.text : DefaultTheme.colors.text,
                 }}
             />
-            <ThemedView style={styles.questionContainer}>
+            <ThemedView style={[styles.questionContainer, {
+                backgroundColor: theme === 'dark' ? DarkTheme.colors.card : DefaultTheme.colors.card,
+                borderColor: theme === 'dark' ? DarkTheme.colors.border : DefaultTheme.colors.border,
+            }]}>
                 <ThemedText style={styles.absolute}>
                     {currentQuestionIndex + 1} / {questionsArray.length}
                 </ThemedText>
@@ -73,7 +87,7 @@ const styles = StyleSheet.create({
     questionContainer: {
         width: '100%',
         height: '90%',
-        backgroundColor: DarkTheme.colors.card,
+        borderWidth: 1,
         borderRadius: 10,
         padding: 12,
         alignItems: 'center',

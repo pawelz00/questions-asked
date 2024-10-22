@@ -19,22 +19,22 @@ export const categories: CategoryProps[] = [
     {
         title: "Przyszłość",
         color: '#334466',
-        lightColor: '#334466',
+        lightColor: '#99aacc',
     },
     {
         title: "Emocje",
         color: '#7d5b5b',
-        lightColor: '#7d5b5b',
+        lightColor: '#d6b3b3',
     },
     {
         title: "Zdrowie",
-        color: '#6a4a6a',
-        lightColor: '#6a4a6a',
+        color: '#567567',
+        lightColor: '#a3c3a3',
     },
     {
         title: "Erotyczne",
-        color: '#567567',
-        lightColor: '#567567',
+        color: '#6a4a6a',
+        lightColor: '#c3a3c3',
     },
 ]
 

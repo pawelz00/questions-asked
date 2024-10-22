@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, useColorScheme } from "react-native";
 import Category from "@/components/questions/category";
 import { categories, questions } from "@/constants/Questions";
 import { ThemedText } from "@/components/themed-text";
@@ -9,11 +9,12 @@ import { Link } from "expo-router";
 export default function Index() {
 
   const questionsLength = questions.length;
+  const theme = useColorScheme();
 
   return (
     // Todo: Add number of completed questions 
     <View style={styles.container}>
-      <ThemedText style={{ fontSize: 18, fontWeight: 'semibold' }}>
+      <ThemedText style={styles.text}>
         W bazie posiadamy {questionsLength} {questionsLength === 1 ? 'pytanie' : questionsLength < 5 ? 'pytania' : 'pytań'}!
       </ThemedText>
       <ThemedView style={styles.categoryContainer}>
@@ -24,7 +25,7 @@ export default function Index() {
                 pathname: '/(tabs)/(questions)/single/[category]',
                 params: { category: category.title }
               }}>
-              <Category title={category.title} color={category.color} />
+              <Category title={category.title} color={theme === 'dark' ? category.color : category.lightColor} />
             </Link>
           </ThemedView>
         ))}
@@ -34,6 +35,10 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+  text: {
+    fontSize: 18,
+    fontWeight: 'semibold'
+  },
   categoryContainer: {
     backgroundColor: 'transparent',
     flexDirection: 'row',

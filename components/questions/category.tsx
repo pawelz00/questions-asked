@@ -10,6 +10,7 @@ export default function Category({ title, color }: CategoryProps) {
         <ThemedView darkColor={DarkTheme.colors.background} style={{
             ...styles.view,
             backgroundColor: color ?? DarkTheme.colors.card,
+            borderColor: color ?? DarkTheme.colors.card,
         }}>
             <ThemedText style={styles.text}>
                 {title}
@@ -30,7 +31,6 @@ const styles = StyleSheet.create({
         height: 64,
         borderWidth: 2,
         borderRadius: 10,
-        backgroundColor: DarkTheme.colors.card,
         shadowOpacity: 0.2,
         shadowRadius: 10,
         paddingHorizontal: 32,

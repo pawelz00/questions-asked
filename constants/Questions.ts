@@ -7,6 +7,8 @@ export interface Question {
     category: typeof categoriesTitles[number];
 }
 
+export type Questions = Question[];
+
 export interface CategoryProps {
     title: typeof categoriesTitles[number];
     color?: string;
@@ -31,17 +33,13 @@ export const categories: CategoryProps[] = [
     },
 ]
 
-export const questions: Question[] = [
+export const questions: Questions = [
     {
         question: "Jak widzisz nasz związek za 5 lat?",
         category: "Przyszłość",
     },
     {
         question: "Jakie emocje towarzyszą Ci w naszym związku?",
-        category: "Emocje",
-    },
-    {
-        question: "test",
         category: "Emocje",
     },
     {

@@ -1,8 +1,7 @@
 import { ThemedText } from "@/components/themed-text";
 import DarkTheme from "@/config/DarkTheme";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from 'expo-router';
 import HomeButtonAnimated from "@/components/animation/home-button";
 
 export default function Index() {

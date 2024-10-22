@@ -3,7 +3,6 @@ import Category from "@/components/questions/category";
 import { categories, questions } from "@/constants/Questions";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
-import DarkTheme from "@/config/DarkTheme";
 import { Link } from "expo-router";
 
 export default function Index() {

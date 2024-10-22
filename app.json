@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "expo-test-app",
-    "slug": "expo-test-app",
+    "name": "questions-asked",
+    "slug": "questions-asked",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",

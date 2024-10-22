@@ -7,7 +7,7 @@ import { CategoryProps, questions } from "@/constants/Questions";
 export default function Category({ title, color }: CategoryProps) {
 
     return (
-        <ThemedView darkColor={DarkTheme.colors.background} style={{
+        <ThemedView style={{
             ...styles.view,
             backgroundColor: color ?? DarkTheme.colors.card,
             borderColor: color ?? DarkTheme.colors.card,

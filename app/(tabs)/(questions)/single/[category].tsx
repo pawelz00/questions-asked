@@ -1,6 +1,6 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Stack, Tabs, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import { View, StyleSheet, useColorScheme } from 'react-native';
 import { categories, Question, questions } from '@/constants/Questions';
 import DarkTheme from '@/config/DarkTheme';

@@ -6,7 +6,6 @@ import { ThemedView } from '@/components/themed-view';
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const theme = useColorScheme();
 
   return (
     <ThemedView style={styles.basic}>

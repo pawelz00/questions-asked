@@ -7,10 +7,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function RootLayout() {
     const colorScheme = useColorScheme();
-
-    console.log(colorScheme);
-
-
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>

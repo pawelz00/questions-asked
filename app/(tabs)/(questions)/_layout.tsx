@@ -8,12 +8,15 @@ export default function HomeLayout() {
                 headerStyle: {
                     backgroundColor: DarkTheme.colors.card,
                 },
-                headerTintColor: '#fff',
                 headerTitleStyle: {
-                    fontWeight: 'bold',
+                    fontSize: 16,
+                    color: DarkTheme.colors.text,
                 },
+                headerShown: true,
             }}>
-            <Stack.Screen name="index" options={{ headerShown: true, title: "Wybierz kategorię" }} />
+            <Stack.Screen name="index" options={{
+                title: "Wybierz kategorię"
+            }} />
         </Stack>
     );
 }

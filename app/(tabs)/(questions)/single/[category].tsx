@@ -35,14 +35,15 @@ export default function DetailsScreen() {
                     headerBackTitleVisible: false,
                     headerStyle: {
                         backgroundColor: categories.find((cat) => cat.title === category)?.color,
-                    }
+                    },
+                    headerTintColor: DarkTheme.colors.text,
                 }}
             />
             <ThemedView style={styles.questionContainer}>
                 <ThemedText style={styles.absolute}>
                     {currentQuestionIndex + 1} / {questionsArray.length}
                 </ThemedText>
-                <ThemedText>
+                <ThemedText style={{ textAlign: 'center' }}>
                     {currentQuestion?.question}
                 </ThemedText>
             </ThemedView>
@@ -82,6 +83,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 10,
         right: 20,
+        fontWeight: 'light',
+        fontVariant: ['tabular-nums'],
     },
     buttonContainer: {
         flexDirection: 'row',

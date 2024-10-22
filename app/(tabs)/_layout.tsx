@@ -24,6 +24,10 @@ export default function TabLayout() {
                     backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
                 },
                 headerTitle: "Jak korzystać?",
+                headerTitleStyle: {
+                    fontSize: 16,
+                    color: theme === 'dark' ? DarkTheme.colors.text : Colors.light.headerText,
+                },
                 title: "Instrukcja",
             }} />
             <Tabs.Screen name="(questions)" options={{

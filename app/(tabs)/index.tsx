@@ -3,6 +3,7 @@ import DarkTheme from "@/config/DarkTheme";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from 'expo-router';
+import HomeButtonAnimated from "@/components/animation/home-button";
 
 export default function Index() {
 
@@ -18,12 +19,7 @@ export default function Index() {
                 Nasza aplikacja dostarcza wiele pytań na różne tematy – od zabawnych po poważne.
                 Odpowiadajcie razem na pytania i odkrywajcie nowe rzeczy o sobie!
             </ThemedText>
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.push('/(tabs)/(questions)')}
-            >
-                <Text style={styles.buttonText}>Przejdź do pytań  ➡️</Text>
-            </TouchableOpacity>
+            <HomeButtonAnimated />
         </SafeAreaView >
     );
 }

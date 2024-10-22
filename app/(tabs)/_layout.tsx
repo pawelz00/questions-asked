@@ -1,13 +1,12 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Colors } from '@/constants/Colors';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { useColorScheme } from 'react-native';
 import { TabBarIcon } from '@/components/navigation/tab-bar-icon';
 import DarkTheme from '@/config/DarkTheme';
+import DefaultTheme from '@/config/DefaultTheme';
 
 export default function TabLayout() {
-
     const theme = useColorScheme();
     return (
         <Tabs
@@ -21,7 +20,7 @@ export default function TabLayout() {
                     <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
                 ),
                 tabBarStyle: {
-                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
+                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : DefaultTheme.colors.card,
                 },
                 headerTitle: "Jak korzystać?",
                 headerTitleStyle: {
@@ -35,7 +34,7 @@ export default function TabLayout() {
                     <TabBarIcon name={focused ? 'heart' : 'heart-outline'} color={color} />
                 ),
                 tabBarStyle: {
-                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
+                    backgroundColor: theme === 'dark' ? DarkTheme.colors.card : DefaultTheme.colors.card,
                 },
                 title: "Pytania",
                 headerShown: false,

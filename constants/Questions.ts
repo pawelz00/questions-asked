@@ -12,24 +12,29 @@ export type Questions = Question[];
 export interface CategoryProps {
     title: typeof categoriesTitles[number];
     color?: string;
+    lightColor?: string;
 }
 
 export const categories: CategoryProps[] = [
     {
         title: "Przyszłość",
         color: '#334466',
+        lightColor: '#334466',
     },
     {
         title: "Emocje",
         color: '#7d5b5b',
+        lightColor: '#7d5b5b',
     },
     {
         title: "Zdrowie",
         color: '#6a4a6a',
+        lightColor: '#6a4a6a',
     },
     {
         title: "Erotyczne",
         color: '#567567',
+        lightColor: '#567567',
     },
 ]
 

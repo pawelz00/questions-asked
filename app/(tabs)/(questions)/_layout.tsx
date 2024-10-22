@@ -6,14 +6,14 @@ export default function HomeLayout() {
         <Stack
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: DarkTheme.colors.border,
+                    backgroundColor: DarkTheme.colors.card,
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
                     fontWeight: 'bold',
                 },
             }}>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="index" options={{ headerShown: true, title: "Wybierz kategorię" }} />
         </Stack>
     );
 }

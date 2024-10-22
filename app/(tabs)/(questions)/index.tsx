@@ -19,11 +19,13 @@ export default function Index() {
       <ThemedView style={styles.categoryContainer}>
         {categories.map((category, index) => (
           <ThemedView style={{ backgroundColor: 'transparent' }}>
-            <Link href={{
-              pathname: '/(tabs)/(questions)/single/[category]',
-              params: { category: category.title }
-            }}>
-              <Category title={category.title} color={category.color} key={category.title + index} />
+            <Link
+              key={category.title + index}
+              href={{
+                pathname: '/(tabs)/(questions)/single/[category]',
+                params: { category: category.title }
+              }}>
+              <Category title={category.title} color={category.color} />
             </Link>
           </ThemedView>
         ))}
@@ -34,7 +36,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   categoryContainer: {
-    backgroundColor: 'transparent', 
+    backgroundColor: 'transparent',
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,

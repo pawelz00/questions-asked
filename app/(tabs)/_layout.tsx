@@ -9,7 +9,6 @@ import DarkTheme from '@/config/DarkTheme';
 export default function TabLayout() {
 
     const theme = useColorScheme();
-
     return (
         <Tabs
             screenOptions={{
@@ -35,6 +34,7 @@ export default function TabLayout() {
                     backgroundColor: theme === 'dark' ? DarkTheme.colors.card : Colors.light.headerStyle,
                 },
                 title: "Pytania",
+                headerShown: false,
             }} />
         </Tabs>
     );

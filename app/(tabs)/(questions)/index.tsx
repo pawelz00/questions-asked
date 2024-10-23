@@ -18,13 +18,13 @@ export default function Index() {
       </ThemedText>
       <ThemedView style={styles.categoryContainer}>
         {categories.map((category, index) => (
-          <ThemedView key={category.title + index} style={{ backgroundColor: 'transparent' }}>
+          <ThemedView key={category.categoryName + index} style={{ backgroundColor: 'transparent' }}>
             <Link
               href={{
                 pathname: '/(tabs)/(questions)/single/[category]',
-                params: { category: category.title }
+                params: { category: category.categoryName }
               }}>
-              <Category title={category.title} color={theme === 'dark' ? category.color : category.lightColor} />
+              <Category categoryName={category.categoryName} label={category.label} color={theme === 'dark' ? category.color : category.lightColor} />
             </Link>
           </ThemedView>
         ))}

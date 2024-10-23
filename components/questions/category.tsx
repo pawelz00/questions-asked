@@ -4,7 +4,7 @@ import { ThemedText } from "../themed-text";
 import DarkTheme from "@/config/DarkTheme";
 import { CategoryProps, questions } from "@/constants/Questions";
 
-export default function Category({ title, color }: CategoryProps) {
+export default function Category({ categoryName, color, label }: CategoryProps) {
 
     return (
         <ThemedView style={{
@@ -13,10 +13,10 @@ export default function Category({ title, color }: CategoryProps) {
             borderColor: color ?? DarkTheme.colors.card,
         }}>
             <ThemedText style={styles.text}>
-                {title}
+                {label}
             </ThemedText>
             <ThemedText style={styles.numberOfQuestions}>
-                {questions.filter((question) => question.category === title)?.length}
+                {questions.filter((question) => question.category === categoryName)?.length}
             </ThemedText>
         </ThemedView>
     )

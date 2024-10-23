@@ -1,4 +1,3 @@
-import { Colors } from '@/constants/Colors';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { useColorScheme } from 'react-native';
@@ -12,7 +11,7 @@ export default function TabLayout() {
         <Tabs
             screenOptions={{
                 headerShown: true,
-                tabBarActiveTintColor: Colors[theme ?? 'light'].headerText,
+                tabBarActiveTintColor: theme === 'dark' ? DarkTheme.colors.primary : DefaultTheme.colors.primary,
             }}
         >
             <Tabs.Screen name="index" options={{
@@ -25,7 +24,7 @@ export default function TabLayout() {
                 headerTitle: "Jak korzystać?",
                 headerTitleStyle: {
                     fontSize: 16,
-                    color: theme === 'dark' ? DarkTheme.colors.text : Colors.light.headerText,
+                    color: theme === 'dark' ? DarkTheme.colors.text : DefaultTheme.colors.text,
                 },
                 title: "Instrukcja",
             }} />
